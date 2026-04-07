@@ -1,0 +1,76 @@
+
+--- 正在準備資料集 ---
+模型總參數數量: 6,280,710
+
+--- 開始訓練模型 ---
+開始訓練，最多執行 9999 Epochs，早停耐心值為 10...
+Epoch 001: 🌟 發現更低的 Valid Loss (1.4972)，已更新權重！
+Epoch 002: 🌟 發現更低的 Valid Loss (1.1340)，已更新權重！
+Epoch 003: ⚠️ 表現未提升，已連續 1/10 回合沒有進步。
+Epoch 004: 🌟 發現更低的 Valid Loss (0.7859)，已更新權重！
+Epoch 005: 🌟 發現更低的 Valid Loss (0.6810)，已更新權重！
+Epoch 006: 🌟 發現更低的 Valid Loss (0.5318)，已更新權重！
+Epoch 007: ⚠️ 表現未提升，已連續 1/10 回合沒有進步。
+Epoch 008: ⚠️ 表現未提升，已連續 2/10 回合沒有進步。
+Epoch 009: ⚠️ 表現未提升，已連續 3/10 回合沒有進步。
+Epoch 010: ⚠️ 表現未提升，已連續 4/10 回合沒有進步。
+Epoch 011: ⚠️ 表現未提升，已連續 5/10 回合沒有進步。
+Epoch 012: ⚠️ 表現未提升，已連續 6/10 回合沒有進步。
+Epoch 013: ⚠️ 表現未提升，已連續 7/10 回合沒有進步。
+Epoch 014: ⚠️ 表現未提升，已連續 8/10 回合沒有進步。
+Epoch 015: ⚠️ 表現未提升，已連續 9/10 回合沒有進步。
+Epoch 016: ⚠️ 表現未提升，已連續 10/10 回合沒有進步。
+
+🛑 [Early Stopping] 偵測到模型已停止進步，訓練提早結束！
+訓練結束。目前模型已載入 Best Valid Loss = 0.5318 的權重。
+
+--- 執行最終外部測試集評估 ---
+Traceback (most recent call last):
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1310, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/queues.py", line 113, in get
+    if not self._poll(timeout):
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/connection.py", line 440, in _poll
+    r = wait([self], timeout)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/connection.py", line 1136, in wait
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 206140) is killed by signal: Killed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 170, in <module>
+    main()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 167, in main
+    trainer.run()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 159, in run
+    self.evaluate_and_log()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 86, in evaluate_and_log
+    accuracy, true_labels, pred_labels, misclassified_info = evaluate_model(
+                                                             ^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/src/engine.py", line 135, in evaluate_model
+    for inputs, labels in test_loader:
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 741, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1524, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1483, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1323, in _try_get_data
+    raise RuntimeError(
+RuntimeError: DataLoader worker (pid(s) 206140) exited unexpectedly

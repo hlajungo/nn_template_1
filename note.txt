@@ -1,0 +1,5 @@
+# sync my "./data" to gdrive "./data"
+rclone sync ./data gdrive,root_folder_id=1h-XkortsO3MnO_VcrVi0VQf0D1kk2_oQ:data
+
+# Download gdrive "./data" to my "./data"
+rclone copy gdrive,root_folder_id=1h-XkortsO3MnO_VcrVi0VQf0D1kk2_oQ:data ./data

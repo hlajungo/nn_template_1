@@ -1,0 +1,71 @@
+
+--- 正在準備資料集 ---
+模型總參數數量: 6,280,710
+
+--- 開始訓練模型 ---
+開始訓練，最多執行 9999 Epochs，早停耐心值為 10...
+Epoch 001: 🌟 發現更低的 Valid Loss (1.4627)，已更新權重！
+Epoch 002: 🌟 發現更低的 Valid Loss (1.0440)，已更新權重！
+Epoch 003: ⚠️ 表現未提升，已連續 1/10 回合沒有進步。
+Epoch 004: 🌟 發現更低的 Valid Loss (0.6916)，已更新權重！
+Epoch 005: 🌟 發現更低的 Valid Loss (0.6530)，已更新權重！
+Epoch 006: 🌟 發現更低的 Valid Loss (0.4964)，已更新權重！
+Epoch 007: ⚠️ 表現未提升，已連續 1/10 回合沒有進步。
+Epoch 008: ⚠️ 表現未提升，已連續 2/10 回合沒有進步。
+Epoch 009: ⚠️ 表現未提升，已連續 3/10 回合沒有進步。
+Epoch 010: ⚠️ 表現未提升，已連續 4/10 回合沒有進步。
+Epoch 011: ⚠️ 表現未提升，已連續 5/10 回合沒有進步。
+Epoch 012: ⚠️ 表現未提升，已連續 6/10 回合沒有進步。
+Epoch 013: ⚠️ 表現未提升，已連續 7/10 回合沒有進步。
+Epoch 014: ⚠️ 表現未提升，已連續 8/10 回合沒有進步。
+Epoch 015: ⚠️ 表現未提升，已連續 9/10 回合沒有進步。
+Epoch 016: ⚠️ 表現未提升，已連續 10/10 回合沒有進步。
+
+🛑 [Early Stopping] 偵測到模型已停止進步，訓練提早結束！
+訓練結束。目前模型已載入 Best Valid Loss = 0.4964 的權重。
+
+--- 執行最終外部測試集評估 ---
+Traceback (most recent call last):
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 170, in <module>
+    main()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 167, in main
+    trainer.run()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 159, in run
+    self.evaluate_and_log()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 86, in evaluate_and_log
+    accuracy, true_labels, pred_labels, misclassified_info = evaluate_model(
+                                                             ^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/src/engine.py", line 137, in evaluate_model
+    outputs = model(inputs)
+              ^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/src/model/CNN.py", line 124, in forward
+    x = self.features(x)
+        ^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 553, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 548, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 25.00 GiB. GPU 0 has a total capacity of 7.66 GiB of which 6.08 GiB is free. Including non-PyTorch memory, this process has 1.55 GiB memory in use. Of the allocated memory 1.28 GiB is allocated by PyTorch, and 70.26 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

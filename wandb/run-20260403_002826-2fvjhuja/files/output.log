@@ -1,0 +1,67 @@
+模型總參數數量: 1,573,638
+Epoch 1/50 - Loss: 1.2664
+Epoch 2/50 - Loss: 0.9435
+Epoch 3/50 - Loss: 0.8774
+Epoch 4/50 - Loss: 0.8436
+Epoch 5/50 - Loss: 0.8037
+Epoch 6/50 - Loss: 0.8257
+Epoch 7/50 - Loss: 0.7825
+Epoch 8/50 - Loss: 0.7154
+Epoch 9/50 - Loss: 0.6656
+Epoch 10/50 - Loss: 0.6937
+Epoch 11/50 - Loss: 0.6970
+Epoch 12/50 - Loss: 0.6572
+Epoch 13/50 - Loss: 0.6213
+Epoch 14/50 - Loss: 0.5946
+Epoch 15/50 - Loss: 0.5349
+Epoch 16/50 - Loss: 0.6168
+Epoch 17/50 - Loss: 0.6475
+Epoch 18/50 - Loss: 0.7023
+Epoch 19/50 - Loss: 0.5849
+Epoch 20/50 - Loss: 0.6203
+Epoch 21/50 - Loss: 0.5320
+Epoch 22/50 - Loss: 0.5210
+Epoch 23/50 - Loss: 0.4845
+Epoch 24/50 - Loss: 0.4633
+Epoch 25/50 - Loss: 0.4683
+Epoch 26/50 - Loss: 0.4772
+Epoch 27/50 - Loss: 0.4898
+Epoch 28/50 - Loss: 0.4254
+Epoch 29/50 - Loss: 0.4311
+Epoch 30/50 - Loss: 0.4763
+Epoch 31/50 - Loss: 0.4263
+Epoch 32/50 - Loss: 0.4131
+Epoch 33/50 - Loss: 0.4364
+Epoch 34/50 - Loss: 0.4200
+Epoch 35/50 - Loss: 0.4471
+Epoch 36/50 - Loss: 0.4490
+Epoch 37/50 - Loss: 0.4611
+Epoch 38/50 - Loss: 0.4348
+Epoch 39/50 - Loss: 0.4167
+Epoch 40/50 - Loss: 0.3387
+Epoch 41/50 - Loss: 0.3640
+Epoch 42/50 - Loss: 0.3509
+Epoch 43/50 - Loss: 0.3425
+Epoch 44/50 - Loss: 0.3105
+Epoch 45/50 - Loss: 0.3265
+Epoch 46/50 - Loss: 0.3421
+Epoch 47/50 - Loss: 0.3112
+Epoch 48/50 - Loss: 0.3612
+Epoch 49/50 - Loss: 0.3188
+Epoch 50/50 - Loss: 0.3605
+Test Accuracy: 72.73%
+模型權重已儲存至: checkpoint/mnist_latest.pth
+/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py:73: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+  torch.onnx.export(
+[torch.onnx] Obtain model graph for `PlantCNN([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `PlantCNN([...]` with `torch.export.export(..., strict=False)`... ✅
+[torch.onnx] Run decompositions...
+/usr/lib/python3.12/copyreg.py:99: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+[torch.onnx] Run decompositions... ✅
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... ✅
+[torch.onnx] Optimize the ONNX graph...
+Applied 6 of general pattern rewrite rules.
+[torch.onnx] Optimize the ONNX graph... ✅
+ONNX 模型已成功匯出至: checkpoint/mnist_cnn.onnx

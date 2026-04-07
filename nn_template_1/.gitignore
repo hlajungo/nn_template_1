@@ -1,0 +1,21 @@
+# 環境與快取
+venv/
+__pycache__/
+*.pyc
+
+# 資料集(.gitkeep 保持目錄)
+data/*
+!data/.gitkeep
+*.csv
+*.zip
+*.tar.gz
+
+# 模型權重與輸出
+checkpoint/*
+!checkpoint/.gitkeep
+*.pth
+*.onnx
+*.onnx.data
+
+# 文件編輯暫存檔
+*.odt

@@ -1,0 +1,25 @@
+2026-04-05 22:08:15,099 INFO    MainThread:210297 [wandb_setup.py:_flush():81] Current SDK version is 0.25.1
+2026-04-05 22:08:15,099 INFO    MainThread:210297 [wandb_setup.py:_flush():81] Configure stats pid to 210297
+2026-04-05 22:08:15,100 INFO    MainThread:210297 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-04-05 22:08:15,100 INFO    MainThread:210297 [wandb_init.py:setup_run_log_directory():717] Logging user logs to /media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/wandb/run-20260405_220815-93um72er/logs/debug.log
+2026-04-05 22:08:15,100 INFO    MainThread:210297 [wandb_init.py:setup_run_log_directory():718] Logging internal logs to /media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/wandb/run-20260405_220815-93um72er/logs/debug-internal.log
+2026-04-05 22:08:15,100 INFO    MainThread:210297 [wandb_init.py:init():844] calling init triggers
+2026-04-05 22:08:15,100 INFO    MainThread:210297 [wandb_init.py:init():849] wandb.init called with sweep_config: {}
+config: {'seed': 42, 'device': 'cuda', 'test_csv_path': './data/process/test.csv', 'batch_size': 64, 'test_batch_size': 64, 'model_type': 'PlantCNN_v2', 'learning_rate': 0.0001, 'epochs': 9999, 'model_weight_path': 'checkpoint/mnist_latest.pth', 'onnx_path': 'checkpoint/mnist_cnn.onnx', 'submission_path': 'submission.csv', 'img_channels': 3, 'img_size': 224, 'class_names': ['台灣欒樹', '松', '桂花', '楓', '羊蹄甲', '苦楝'], 'data_dir': './data/process', 'test_dir': './data/ext_test/process', '_wandb': {}}
+2026-04-05 22:08:15,101 INFO    MainThread:210297 [wandb_init.py:init():892] starting backend
+2026-04-05 22:08:15,365 INFO    MainThread:210297 [wandb_init.py:init():895] sending inform_init request
+2026-04-05 22:08:15,374 INFO    MainThread:210297 [wandb_init.py:init():903] backend started and connected
+2026-04-05 22:08:15,394 INFO    MainThread:210297 [wandb_init.py:init():973] updated telemetry
+2026-04-05 22:08:15,399 INFO    MainThread:210297 [wandb_init.py:init():997] communicating run to backend with 90.0 second timeout
+2026-04-05 22:08:16,230 INFO    MainThread:210297 [wandb_init.py:init():1042] starting run threads in backend
+2026-04-05 22:08:16,316 INFO    MainThread:210297 [wandb_run.py:_console_start():2524] atexit reg
+2026-04-05 22:08:16,316 INFO    MainThread:210297 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-04-05 22:08:16,316 INFO    MainThread:210297 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-04-05 22:08:16,316 INFO    MainThread:210297 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-04-05 22:08:16,318 INFO    MainThread:210297 [wandb_init.py:init():1082] run started, returning control to user process
+2026-04-05 22:15:10,230 INFO    MainThread:210297 [wandb_run.py:_config_callback():1403] config_cb ('_wandb', 'visualize', 'Confusion Matrix') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': 'Confusion Matrix Curve'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'Confusion Matrix_table'}], 'fields': []}]}]}}} None
+2026-04-05 22:15:14,190 INFO    MainThread:210297 [wandb_run.py:_finish():2291] finishing run hlajungo-t/plant-classification/93um72er
+2026-04-05 22:15:14,190 INFO    MainThread:210297 [wandb_run.py:_atexit_cleanup():2490] got exitcode: 0
+2026-04-05 22:15:14,190 INFO    MainThread:210297 [wandb_run.py:_restore():2472] restore
+2026-04-05 22:15:14,190 INFO    MainThread:210297 [wandb_run.py:_restore():2478] restore done
+2026-04-05 22:15:17,436 INFO    MainThread:210297 [wandb_run.py:_footer_sync_info():3868] logging synced files

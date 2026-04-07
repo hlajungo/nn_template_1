@@ -1,0 +1,221 @@
+
+--- 正在準備資料集 ---
+模型總參數數量: 6,280,710
+
+--- 開始訓練模型 ---
+開始訓練，最多執行 9999 Epochs，早停耐心值為 20...
+Epoch 001: 🌟 發現更低的 Valid Loss (1.5180)，已更新權重！
+Epoch 002: 🌟 發現更低的 Valid Loss (0.9524)，已更新權重！
+Epoch 003: 🌟 發現更低的 Valid Loss (0.7503)，已更新權重！
+Epoch 004: 🌟 發現更低的 Valid Loss (0.5781)，已更新權重！
+Epoch 005: 🌟 發現更低的 Valid Loss (0.4496)，已更新權重！
+Epoch 006: ⚠️  表現未提升 Vaild Loss (0.5056)，已連續 1/20 回合沒有進步。
+Epoch 007: 🌟 發現更低的 Valid Loss (0.3919)，已更新權重！
+Epoch 008: ⚠️  表現未提升 Vaild Loss (0.9369)，已連續 1/20 回合沒有進步。
+Epoch 009: ⚠️  表現未提升 Vaild Loss (0.6666)，已連續 2/20 回合沒有進步。
+Epoch 010: ⚠️  表現未提升 Vaild Loss (0.5790)，已連續 3/20 回合沒有進步。
+Epoch 011: 🌟 發現更低的 Valid Loss (0.3635)，已更新權重！
+Epoch 012: ⚠️  表現未提升 Vaild Loss (0.3936)，已連續 1/20 回合沒有進步。
+Epoch 013: ⚠️  表現未提升 Vaild Loss (0.6201)，已連續 2/20 回合沒有進步。
+Epoch 014: ⚠️  表現未提升 Vaild Loss (0.3735)，已連續 3/20 回合沒有進步。
+Epoch 015: ⚠️  表現未提升 Vaild Loss (0.5469)，已連續 4/20 回合沒有進步。
+Epoch 016: ⚠️  表現未提升 Vaild Loss (0.4123)，已連續 5/20 回合沒有進步。
+Epoch 017: ⚠️  表現未提升 Vaild Loss (0.5387)，已連續 6/20 回合沒有進步。
+Epoch 018: ⚠️  表現未提升 Vaild Loss (0.4081)，已連續 7/20 回合沒有進步。
+Epoch 019: 🌟 發現更低的 Valid Loss (0.3221)，已更新權重！
+Epoch 020: 🌟 發現更低的 Valid Loss (0.2709)，已更新權重！
+Epoch 021: ⚠️  表現未提升 Vaild Loss (0.3269)，已連續 1/20 回合沒有進步。
+Epoch 022: ⚠️  表現未提升 Vaild Loss (0.3658)，已連續 2/20 回合沒有進步。
+Epoch 023: ⚠️  表現未提升 Vaild Loss (0.2842)，已連續 3/20 回合沒有進步。
+Epoch 024: ⚠️  表現未提升 Vaild Loss (0.3714)，已連續 4/20 回合沒有進步。
+Epoch 025: ⚠️  表現未提升 Vaild Loss (0.3767)，已連續 5/20 回合沒有進步。
+Epoch 026: ⚠️  表現未提升 Vaild Loss (0.3537)，已連續 6/20 回合沒有進步。
+Epoch 027: 🌟 發現更低的 Valid Loss (0.2366)，已更新權重！
+Epoch 028: ⚠️  表現未提升 Vaild Loss (0.4305)，已連續 1/20 回合沒有進步。
+Epoch 029: ⚠️  表現未提升 Vaild Loss (0.3696)，已連續 2/20 回合沒有進步。
+Epoch 030: ⚠️  表現未提升 Vaild Loss (0.3882)，已連續 3/20 回合沒有進步。
+Epoch 031: ⚠️  表現未提升 Vaild Loss (0.3639)，已連續 4/20 回合沒有進步。
+Epoch 032: ⚠️  表現未提升 Vaild Loss (0.3404)，已連續 5/20 回合沒有進步。
+Epoch 033: ⚠️  表現未提升 Vaild Loss (0.7675)，已連續 6/20 回合沒有進步。
+Epoch 034: ⚠️  表現未提升 Vaild Loss (0.2547)，已連續 7/20 回合沒有進步。
+Epoch 035: ⚠️  表現未提升 Vaild Loss (0.3438)，已連續 8/20 回合沒有進步。
+Epoch 036: ⚠️  表現未提升 Vaild Loss (0.4208)，已連續 9/20 回合沒有進步。
+Epoch 037: 🌟 發現更低的 Valid Loss (0.2230)，已更新權重！
+Epoch 038: ⚠️  表現未提升 Vaild Loss (0.3353)，已連續 1/20 回合沒有進步。
+Epoch 039: ⚠️  表現未提升 Vaild Loss (0.7844)，已連續 2/20 回合沒有進步。
+Epoch 040: ⚠️  表現未提升 Vaild Loss (0.2607)，已連續 3/20 回合沒有進步。
+Epoch 041: ⚠️  表現未提升 Vaild Loss (0.6539)，已連續 4/20 回合沒有進步。
+Epoch 042: 🌟 發現更低的 Valid Loss (0.2032)，已更新權重！
+Epoch 043: ⚠️  表現未提升 Vaild Loss (0.2121)，已連續 1/20 回合沒有進步。
+Epoch 044: ⚠️  表現未提升 Vaild Loss (0.2052)，已連續 2/20 回合沒有進步。
+Epoch 045: ⚠️  表現未提升 Vaild Loss (0.2566)，已連續 3/20 回合沒有進步。
+Epoch 046: ⚠️  表現未提升 Vaild Loss (0.2450)，已連續 4/20 回合沒有進步。
+Epoch 047: ⚠️  表現未提升 Vaild Loss (0.2110)，已連續 5/20 回合沒有進步。
+Epoch 048: 🌟 發現更低的 Valid Loss (0.1656)，已更新權重！
+Epoch 049: 🌟 發現更低的 Valid Loss (0.1548)，已更新權重！
+Epoch 050: ⚠️  表現未提升 Vaild Loss (0.2639)，已連續 1/20 回合沒有進步。
+Epoch 051: ⚠️  表現未提升 Vaild Loss (0.2409)，已連續 2/20 回合沒有進步。
+Epoch 052: ⚠️  表現未提升 Vaild Loss (0.2568)，已連續 3/20 回合沒有進步。
+Epoch 053: ⚠️  表現未提升 Vaild Loss (0.2218)，已連續 4/20 回合沒有進步。
+Epoch 054: ⚠️  表現未提升 Vaild Loss (0.3075)，已連續 5/20 回合沒有進步。
+Epoch 055: ⚠️  表現未提升 Vaild Loss (0.2441)，已連續 6/20 回合沒有進步。
+Epoch 056: ⚠️  表現未提升 Vaild Loss (0.1780)，已連續 7/20 回合沒有進步。
+Epoch 057: ⚠️  表現未提升 Vaild Loss (0.2984)，已連續 8/20 回合沒有進步。
+Epoch 058: ⚠️  表現未提升 Vaild Loss (0.2137)，已連續 9/20 回合沒有進步。
+Epoch 059: ⚠️  表現未提升 Vaild Loss (0.3929)，已連續 10/20 回合沒有進步。
+Epoch 060: ⚠️  表現未提升 Vaild Loss (0.1771)，已連續 11/20 回合沒有進步。
+Epoch 061: ⚠️  表現未提升 Vaild Loss (0.2539)，已連續 12/20 回合沒有進步。
+Epoch 062: ⚠️  表現未提升 Vaild Loss (0.2783)，已連續 13/20 回合沒有進步。
+Epoch 063: ⚠️  表現未提升 Vaild Loss (0.2029)，已連續 14/20 回合沒有進步。
+Epoch 064: 🌟 發現更低的 Valid Loss (0.1370)，已更新權重！
+Epoch 065: ⚠️  表現未提升 Vaild Loss (0.3444)，已連續 1/20 回合沒有進步。
+Epoch 066: ⚠️  表現未提升 Vaild Loss (0.4233)，已連續 2/20 回合沒有進步。
+Epoch 067: ⚠️  表現未提升 Vaild Loss (0.1675)，已連續 3/20 回合沒有進步。
+Epoch 068: ⚠️  表現未提升 Vaild Loss (0.2568)，已連續 4/20 回合沒有進步。
+Epoch 069: ⚠️  表現未提升 Vaild Loss (0.1964)，已連續 5/20 回合沒有進步。
+Epoch 070: 🌟 發現更低的 Valid Loss (0.1224)，已更新權重！
+Epoch 071: ⚠️  表現未提升 Vaild Loss (0.3692)，已連續 1/20 回合沒有進步。
+Epoch 072: ⚠️  表現未提升 Vaild Loss (0.1326)，已連續 2/20 回合沒有進步。
+Epoch 073: ⚠️  表現未提升 Vaild Loss (0.1344)，已連續 3/20 回合沒有進步。
+Epoch 074: ⚠️  表現未提升 Vaild Loss (0.1885)，已連續 4/20 回合沒有進步。
+Epoch 075: ⚠️  表現未提升 Vaild Loss (0.2173)，已連續 5/20 回合沒有進步。
+Epoch 076: ⚠️  表現未提升 Vaild Loss (0.1255)，已連續 6/20 回合沒有進步。
+Epoch 077: ⚠️  表現未提升 Vaild Loss (0.1300)，已連續 7/20 回合沒有進步。
+Epoch 078: ⚠️  表現未提升 Vaild Loss (0.1541)，已連續 8/20 回合沒有進步。
+Epoch 079: ⚠️  表現未提升 Vaild Loss (0.1752)，已連續 9/20 回合沒有進步。
+Epoch 080: ⚠️  表現未提升 Vaild Loss (0.2272)，已連續 10/20 回合沒有進步。
+Epoch 081: ⚠️  表現未提升 Vaild Loss (0.1345)，已連續 11/20 回合沒有進步。
+Epoch 082: ⚠️  表現未提升 Vaild Loss (0.4640)，已連續 12/20 回合沒有進步。
+Epoch 083: ⚠️  表現未提升 Vaild Loss (0.1723)，已連續 13/20 回合沒有進步。
+Epoch 084: ⚠️  表現未提升 Vaild Loss (0.1793)，已連續 14/20 回合沒有進步。
+Epoch 085: ⚠️  表現未提升 Vaild Loss (0.1677)，已連續 15/20 回合沒有進步。
+Epoch 086: 🌟 發現更低的 Valid Loss (0.1096)，已更新權重！
+Epoch 087: 🌟 發現更低的 Valid Loss (0.1017)，已更新權重！
+Epoch 088: ⚠️  表現未提升 Vaild Loss (0.1226)，已連續 1/20 回合沒有進步。
+Epoch 089: ⚠️  表現未提升 Vaild Loss (0.1093)，已連續 2/20 回合沒有進步。
+Epoch 090: ⚠️  表現未提升 Vaild Loss (0.2598)，已連續 3/20 回合沒有進步。
+Epoch 091: 🌟 發現更低的 Valid Loss (0.0904)，已更新權重！
+Epoch 092: ⚠️  表現未提升 Vaild Loss (0.1085)，已連續 1/20 回合沒有進步。
+Epoch 093: 🌟 發現更低的 Valid Loss (0.0815)，已更新權重！
+Epoch 094: ⚠️  表現未提升 Vaild Loss (0.2496)，已連續 1/20 回合沒有進步。
+Epoch 095: ⚠️  表現未提升 Vaild Loss (0.1376)，已連續 2/20 回合沒有進步。
+Epoch 096: 🌟 發現更低的 Valid Loss (0.0666)，已更新權重！
+Epoch 097: ⚠️  表現未提升 Vaild Loss (0.2143)，已連續 1/20 回合沒有進步。
+Epoch 098: ⚠️  表現未提升 Vaild Loss (0.2174)，已連續 2/20 回合沒有進步。
+Epoch 099: ⚠️  表現未提升 Vaild Loss (0.1754)，已連續 3/20 回合沒有進步。
+Epoch 100: ⚠️  表現未提升 Vaild Loss (0.1361)，已連續 4/20 回合沒有進步。
+Epoch 101: ⚠️  表現未提升 Vaild Loss (0.0857)，已連續 5/20 回合沒有進步。
+Epoch 102: ⚠️  表現未提升 Vaild Loss (0.2627)，已連續 6/20 回合沒有進步。
+Epoch 103: ⚠️  表現未提升 Vaild Loss (0.1534)，已連續 7/20 回合沒有進步。
+Epoch 104: ⚠️  表現未提升 Vaild Loss (0.2583)，已連續 8/20 回合沒有進步。
+Epoch 105: ⚠️  表現未提升 Vaild Loss (0.1470)，已連續 9/20 回合沒有進步。
+Epoch 106: ⚠️  表現未提升 Vaild Loss (0.0798)，已連續 10/20 回合沒有進步。
+Epoch 107: ⚠️  表現未提升 Vaild Loss (0.1537)，已連續 11/20 回合沒有進步。
+Epoch 108: ⚠️  表現未提升 Vaild Loss (0.0981)，已連續 12/20 回合沒有進步。
+Epoch 109: ⚠️  表現未提升 Vaild Loss (0.1133)，已連續 13/20 回合沒有進步。
+Epoch 110: ⚠️  表現未提升 Vaild Loss (0.0954)，已連續 14/20 回合沒有進步。
+Epoch 111: ⚠️  表現未提升 Vaild Loss (0.0763)，已連續 15/20 回合沒有進步。
+Epoch 112: ⚠️  表現未提升 Vaild Loss (0.1030)，已連續 16/20 回合沒有進步。
+Epoch 113: ⚠️  表現未提升 Vaild Loss (0.0833)，已連續 17/20 回合沒有進步。
+Epoch 114: ⚠️  表現未提升 Vaild Loss (0.1015)，已連續 18/20 回合沒有進步。
+Epoch 115: ⚠️  表現未提升 Vaild Loss (0.1215)，已連續 19/20 回合沒有進步。
+Epoch 116: ⚠️  表現未提升 Vaild Loss (0.2191)，已連續 20/20 回合沒有進步。
+
+🛑 [Early Stopping] 偵測到模型已停止進步，訓練提早結束！
+訓練結束。目前模型已載入 Best Valid Loss = 0.0666 的權重。
+
+--- 執行最終外部測試集評估 ---
+Test Accuracy: 42.04%
+
+=== 分類報告 (Classification Report) ===
+              precision    recall  f1-score   support
+
+        台灣欒樹       0.05      0.11      0.07       100
+           松       0.70      0.74      0.72       154
+          桂花       0.35      0.34      0.35       100
+           楓       0.33      0.11      0.17       151
+         羊蹄甲       0.54      0.80      0.64       194
+          苦楝       0.50      0.19      0.28       162
+
+    accuracy                           0.42       861
+   macro avg       0.41      0.38      0.37       861
+weighted avg       0.45      0.42      0.40       861
+
+=== 各類別的 TP / FP / TN / FN ===
+[台灣欒樹]
+  TP: 11
+  FP: 190
+  FN: 89
+  TN: 571
+------------------------------
+[松]
+  TP: 114
+  FP: 48
+  FN: 40
+  TN: 659
+------------------------------
+[桂花]
+  TP: 34
+  FP: 62
+  FN: 66
+  TN: 699
+------------------------------
+[楓]
+  TP: 17
+  FP: 34
+  FN: 134
+  TN: 676
+------------------------------
+[羊蹄甲]
+  TP: 155
+  FP: 134
+  FN: 39
+  TN: 533
+------------------------------
+[苦楝]
+  TP: 31
+  FP: 31
+  FN: 131
+  TN: 668
+------------------------------
+
+=== 預測錯誤的圖片清單 ===
+檔案: LINE_ALBUM_台灣欒樹_260328_10.jpg | 正確: 台灣欒樹 -> 錯認為: 苦楝
+檔案: LINE_ALBUM_台灣欒樹_260328_100.jpg | 正確: 台灣欒樹 -> 錯認為: 楓
+檔案: LINE_ALBUM_台灣欒樹_260328_101.jpg | 正確: 台灣欒樹 -> 錯認為: 楓
+檔案: LINE_ALBUM_台灣欒樹_260328_102.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_103.jpg | 正確: 台灣欒樹 -> 錯認為: 楓
+檔案: LINE_ALBUM_台灣欒樹_260328_106.jpg | 正確: 台灣欒樹 -> 錯認為: 楓
+檔案: LINE_ALBUM_台灣欒樹_260328_107.jpg | 正確: 台灣欒樹 -> 錯認為: 楓
+檔案: LINE_ALBUM_台灣欒樹_260328_108.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_109.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_110.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_111.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_112.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_113.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_114.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_115.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_116.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_117.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_118.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_119.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+檔案: LINE_ALBUM_台灣欒樹_260328_120.jpg | 正確: 台灣欒樹 -> 錯認為: 羊蹄甲
+...
+(Total 499)
+
+--- 儲存與匯出模型 ---
+模型權重已儲存至: checkpoint/mnist_latest.pth
+/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py:139: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+  torch.onnx.export(
+[torch.onnx] Obtain model graph for `PlantCNN_v2([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `PlantCNN_v2([...]` with `torch.export.export(..., strict=False)`... ✅
+[torch.onnx] Run decompositions...
+/usr/lib/python3.12/copyreg.py:99: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+[torch.onnx] Run decompositions... ✅
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... ✅
+[torch.onnx] Optimize the ONNX graph...
+Applied 6 of general pattern rewrite rules.
+[torch.onnx] Optimize the ONNX graph... ✅
+ONNX 模型已成功匯出至: checkpoint/mnist_cnn.onnx

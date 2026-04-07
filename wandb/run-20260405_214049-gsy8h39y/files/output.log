@@ -1,0 +1,18 @@
+
+--- 正在準備資料集 ---
+模型總參數數量: 6,280,710
+
+--- 開始訓練模型 ---
+Traceback (most recent call last):
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 170, in <module>
+    main()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 167, in main
+    trainer.run()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 158, in run
+    self.train()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 72, in train
+    train_model_with_early_stopping(
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/src/engine.py", line 20, in train_model_with_early_stopping
+    best_model_wts = copy.deepcopy(model.state_dict()) # 用來暫存史上最強的權重
+                     ^^^^
+NameError: name 'copy' is not defined. Did you forget to import 'copy'

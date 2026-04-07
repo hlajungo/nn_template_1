@@ -1,0 +1,126 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            bb2ykiseytshnb2spgs6uwh9h9s5t7sv:
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 14
+                cpu_count_logical: 20
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "194009399296"
+                        used: "139395833856"
+                email: hlajungo@gmail.com
+                executable: /media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/bin/python3
+                git:
+                    commit: 8d9285755781784415e3cdd541dcc27227b7ea3f
+                    remote: git@github.com:hlajungo/nn_template_1.git
+                gpu: NVIDIA GeForce RTX 3070 Ti Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 5888
+                      memoryTotal: "8589934592"
+                      name: NVIDIA GeForce RTX 3070 Ti Laptop GPU
+                      uuid: GPU-ccea8fa6-46a3-f22d-f6e4-e97e0608ecb6
+                host: hlajungo-Predator-PH317-56
+                memory:
+                    total: "16455557120"
+                os: Linux-6.8.0-106-generic-x86_64-with-glibc2.39
+                program: /media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py
+                python: CPython 3.12.3
+                root: /media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1
+                startedAt: "2026-04-05T14:08:15.090653Z"
+                writerId: bb2ykiseytshnb2spgs6uwh9h9s5t7sv
+        m: []
+        python_version: 3.12.3
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 53
+            "2":
+                - 1
+                - 5
+                - 41
+                - 53
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.12.3
+            "5": 0.25.1
+            "12": 0.25.1
+            "13": linux-x86_64
+        visualize:
+            Confusion Matrix:
+                panel_config:
+                    fieldSettings:
+                        Actual: Actual
+                        Predicted: Predicted
+                        nPredictions: nPredictions
+                    panelDefId: wandb/confusion_matrix/v1
+                    stringSettings:
+                        title: Confusion Matrix Curve
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: Confusion Matrix_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+batch_size:
+    value: 64
+class_names:
+    value:
+        - 台灣欒樹
+        - 松
+        - 桂花
+        - 楓
+        - 羊蹄甲
+        - 苦楝
+data_dir:
+    value: ./data/process
+device:
+    value: cuda
+epochs:
+    value: 9999
+img_channels:
+    value: 3
+img_size:
+    value: 224
+learning_rate:
+    value: 0.0001
+model_type:
+    value: PlantCNN_v2
+model_weight_path:
+    value: checkpoint/mnist_latest.pth
+onnx_path:
+    value: checkpoint/mnist_cnn.onnx
+seed:
+    value: 42
+submission_path:
+    value: submission.csv
+test_batch_size:
+    value: 64
+test_csv_path:
+    value: ./data/process/test.csv
+test_dir:
+    value: ./data/ext_test/process

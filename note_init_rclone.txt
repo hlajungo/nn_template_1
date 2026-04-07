@@ -1,0 +1,99 @@
+你做得非常好！直接按下 `Enter` 留空 `client_id` 和 `client_secret` 是完全沒問題的。這會使用 rclone 內建的預設金鑰，對於我們上傳植物圖片這種個人/專案等級的任務來說，效能已經非常夠用了。
+
+接下來終端機會繼續跳出幾個選項，請依照以下步驟一路設定到底：
+
+**1. 設定存取權限 (Scope)**
+終端機會問你需要哪種權限，為了能順利上傳並建立資料夾，請選擇 **1** (完整存取權限)：
+```text
+Option scope.
+...
+Choose a number from below, or type in your own value.
+ 1 / Full access all files, excluding Application Data Folder.
+   \ (drive)
+ 2 / Read-only access to file metadata and file contents.
+   \ (drive.readonly)
+...
+scope> 1
+```
+
+**2. 服務帳戶檔案 (Service Account File)**
+直接按 `Enter` 留空即可：
+```text
+Option service_account_file.
+Service Account Credentials JSON file path.
+...
+service_account_file> (直接按 Enter)
+```
+
+**3. 進階設定 (Advanced config)**
+我們不需要進階設定，輸入 **n**：
+```text
+Edit advanced config?
+y) Yes
+n) No
+y/n> n
+```
+
+**4. 自動設定與網頁授權 (Auto config)**
+這裡非常重要！輸入 **y**。
+這時 rclone 會自動在你的電腦上彈出一個瀏覽器視窗（或給你一串網址讓你複製到瀏覽器貼上）。
+請在網頁上登入你的 Google 帳號，並點擊「允許 (Allow)」授權給 rclone。
+授權成功後，網頁會顯示 Success，這時就可以關閉網頁回到終端機。
+```text
+Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes
+n) No
+y/n> y
+```
+*(註：如果你是在沒有桌面環境的純文字伺服器透過 SSH 操作，這裡要選 `n`，它會教你怎麼在另一台電腦上取得授權碼。)*
+
+**5. 團隊共用雲端硬碟 (Shared Drive / Team Drive)**
+除非你的那個資料夾是學校開的「共用雲端硬碟 (Team Drive)」，否則一般使用者的資料夾這裡請選 **n**：
+```text
+Configure this as a Shared Drive (Team Drive)?
+y) Yes
+n) No
+y/n> n
+```
+
+**6. 確認並儲存**
+最後，它會列出你剛剛設定的資訊，問你確不確定。輸入 **y** 儲存，然後輸入 **q** 離開設定介面：
+```text
+Keep this "gdrive" remote?
+y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d> y
+
+Current remotes:
+Name                 Type
+====                 ====
+gdrive               drive
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q> q
+```
+
+---
+
+### 🎉 設定完成！開始同步
+
+離開設定介面後，你就可以執行我們剛剛提到的那行終極同步指令了！
+
+請確定你現在位於 `1142_nn_mid` 目錄下，然後輸入：
+
+```bash
+rclone sync ./data gdrive,root_folder_id=1h-XkortsO3MnO_VcrVi0VQf0D1kk2_oQ:
+```
+*(注意最後面那個冒號 `:` 一定要加喔！)*
+
+**這行指令會做什麼事？**
+它會去比對你本地端的 `./data` 目錄以及你 Google Drive 上的那個資料夾，然後把你剛剛壓縮好的 224x224 圖片（包含所有植物分類的子資料夾），完美且快速地鏡像複製到雲端上。隊友就可以馬上透過連結看到整理好的資料了！

@@ -1,0 +1,15 @@
+模型總參數數量: 6,280,710
+Epoch 1/100 - Loss: 1.5500
+Epoch 2/100 - Loss: 0.9652
+Epoch 3/100 - Loss: 0.9015
+Epoch 4/100 - Loss: 0.7943
+Traceback (most recent call last):
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 120, in <module>
+    main()
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py", line 69, in main
+    loss_history = train_model(model, train_loader, criterion, optimizer, device, epochs=config.epochs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/src/engine.py", line 23, in train_model
+    running_loss += loss.item()
+                    ^^^^^^^^^^^
+KeyboardInterrupt

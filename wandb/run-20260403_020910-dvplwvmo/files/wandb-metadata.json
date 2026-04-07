@@ -1,0 +1,40 @@
+{
+  "os": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2026-04-02T18:09:10.259342Z",
+  "program": "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/train.py",
+  "codePath": "train.py",
+  "codePathLocal": "train.py",
+  "git": {
+    "remote": "git@github.com:hlajungo/nn_template_1.git",
+    "commit": "8d9285755781784415e3cdd541dcc27227b7ea3f"
+  },
+  "email": "hlajungo@gmail.com",
+  "root": "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1",
+  "host": "hlajungo-Predator-PH317-56",
+  "executable": "/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/nn_template_1/venv/bin/python3",
+  "cpu_count": 14,
+  "cpu_count_logical": 20,
+  "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "194009399296",
+      "used": "139587571712"
+    }
+  },
+  "memory": {
+    "total": "16455561216"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+      "memoryTotal": "8589934592",
+      "cudaCores": 5888,
+      "architecture": "Ampere",
+      "uuid": "GPU-ccea8fa6-46a3-f22d-f6e4-e97e0608ecb6"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "yipb2a9ifgguelhkubzkpeavjb09adeg"
+}

@@ -1,0 +1,25 @@
+Mindustry*
+
+# 環境與快取
+venv/
+__pycache__/
+*.pyc
+os
+jre
+
+# 資料集 (絕對不進版控)
+data/
+*.csv
+*.zip
+*.tar.gz
+
+# 模型權重與輸出
+checkpoint/
+experiment/
+*.pth
+*.onnx
+*.onnx.data
+submission.csv
+
+# 文件編輯暫存檔
+*.odt
