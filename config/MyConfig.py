@@ -11,7 +11,7 @@ class MyConfig(BaseConfig):
   # 從頭開始訓練通常需要多一點 Epoch，這裡先幫你預設調高到 50，可依訓練狀況增減
   epochs: int = 9999
   learning_rate: float = 1e-4
-  patience = 20
+  patience = 10
 
   # --- 新增：圖片維度資訊 ---
   img_channels: int = 3
