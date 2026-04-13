@@ -10,7 +10,7 @@ def main():
 
   print(f"載入 ONNX 模型: {config.onnx_path}")
   # 啟動 ONNX 推論會話 (可加入 providers=['CUDAExecutionProvider'] 開啟 GPU)
-  ort_session = ort.InferenceSession(config.onnx_path)
+  ort_session = ort.InferenceSession(config.onnx_path, providers=['CUDAExecutionProvider'])
 
   print(f"讀取 Kaggle 測試集: {config.test_csv_path}")
   kaggle_test_loader = get_kaggle_test_loader(

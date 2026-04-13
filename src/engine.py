@@ -1,16 +1,33 @@
-# import time
-# import datetime
-# import tqdm
+import bisect
 import torch
 import wandb
 import copy
+from torch.utils.data import Subset, ConcatDataset
 
+def _get_image_path(dataset, idx):
+  """遞迴解析 Dataset，找出該 index 圖片的真實檔案路徑"""
+  if isinstance(dataset, Subset):
+    # 如果是 Subset，就把當前的相對 index 轉換成原始的絕對 index
+    return _get_image_path(dataset.dataset, dataset.indices[idx])
+
+  elif isinstance(dataset, ConcatDataset):
+    # 如果是 ConcatDataset，計算這個 index 屬於哪一個子 dataset
+    dataset_idx = bisect.bisect_right(dataset.cumulative_sizes, idx)
+    if dataset_idx == 0:
+      sample_idx = idx
+    else:
+      sample_idx = idx - dataset.cumulative_sizes[dataset_idx - 1]
+    return _get_image_path(dataset.datasets[dataset_idx], sample_idx)
+
+  else:
+    # 已經剝開到最底層的 ImageFolder
+    return dataset.imgs[idx][0]
 
 
 def train_model_with_early_stopping(
-  model, train_loader, valid_loader, criterion, optimizer, device,
-  epochs=100, patience=10, model_path='checkpoint/best_model.pth'
-):
+    model, train_loader, valid_loader, criterion, optimizer, device,
+    epochs=100, patience=10, model_path='checkpoint/best_model.pth'
+    ):
   """
   包含早停機制的訓練函數
   patience: 容忍多少個 Epoch 沒有進步
@@ -76,7 +93,7 @@ def train_model_with_early_stopping(
       "valid_loss": avg_valid_loss,
       "valid_acc": avg_valid_acc,
       "patience_counter": early_stop_counter
-    })
+      })
 
     # --- 5. 觸發早停 ---
     if early_stop_counter >= patience:
@@ -121,12 +138,9 @@ def evaluate_model(model, test_loader, device, class_names=None):
 
   # 1. 抓出所有測試圖片的真實檔案路徑
   dataset = test_loader.dataset
-  if isinstance(dataset, torch.utils.data.Subset):
-    # 如果是自動切分的 Subset，要找回原始 indices
-    paths = [dataset.dataset.imgs[i][0] for i in dataset.indices]
-  else:
-    # 如果是雙目錄模式直接讀取的 ImageFolder
-    paths = [img[0] for img in dataset.imgs]
+
+  # 使用支援 Subset, ConcatDataset 與單純 ImageFolder 的萬用取路徑法
+  paths = [_get_image_path(dataset, i) for i in range(len(dataset))]
 
   misclassified_info = [] # 用來存錯誤圖片的清單
   current_idx = 0 # 追蹤目前跑到第幾張照片
@@ -155,7 +169,7 @@ def evaluate_model(model, test_loader, device, class_names=None):
             'path': filepath,
             'true': true_class,
             'pred': pred_class
-          })
+            })
       current_idx += len(labels)
 
   accuracy = 100 * correct / total
@@ -163,4 +177,3 @@ def evaluate_model(model, test_loader, device, class_names=None):
 
   # 多回傳一個 misclassified_info
   return accuracy, all_true_labels, all_pred_labels, misclassified_info
-

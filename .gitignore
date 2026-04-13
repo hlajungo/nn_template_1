@@ -7,6 +7,7 @@ __pycache__/
 os
 jre
 
+
 # 資料集 (絕對不進版控)
 data/
 *.csv
@@ -23,3 +24,6 @@ submission.csv
 
 # 文件編輯暫存檔
 *.odt
+
+
+wandb/

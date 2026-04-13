@@ -5,8 +5,12 @@ import torch.optim as optim
 import wandb
 from config.MyConfig import MyConfig
 
-# 確保你有從 src.dataset 引入這兩個我們寫好的 API
-from src.dataset import get_train_valid_loader_from_dir, get_test_loader_from_dir
+# 確保從 src.dataset 引入新的 API
+from src.dataset import (
+    get_train_valid_loader_from_dirs, 
+    get_test_loader_from_dirs,
+    get_train_vaild_test_loader_from_dirs
+    )
 from src.builder import build_model
 from src.engine import train_model_with_early_stopping, evaluate_model
 from src.utils import get_device, set_all_seeds
@@ -40,21 +44,32 @@ class PlantTrainer:
         )
 
   def prepare_data(self):
-    """載入 Train, Valid, 以及外部 Test 資料集"""
+    """根據 test_dirs 是否為空，動態決定切分策略"""
     print("\n--- 正在準備資料集 ---")
-    # 訓練與驗證集 (從 process 目錄動態切分 90/10)
-    self.train_loader, self.valid_loader = get_train_valid_loader_from_dir(
-        data_dir=self.config.data_dir,
-        batch_size=self.config.batch_size,
-        eval_batch_size=self.config.test_batch_size,
-        seed=self.config.seed
-        )
 
-    # 外部測試集 (從 ext_test 目錄全數讀取)
-    self.test_loader = get_test_loader_from_dir(
-        data_dir=self.config.test_dir,
-        eval_batch_size=self.config.test_batch_size
-        )
+    if self.config.test_dirs:
+      print("偵測到獨立測試集，將 train_dirs 切分 (90% Train / 10% Valid)")
+      self.train_loader, self.valid_loader = get_train_valid_loader_from_dirs(
+          data_dirs=self.config.train_dirs,
+          batch_size=self.config.batch_size,
+          eval_batch_size=self.config.test_batch_size,
+          seed=self.config.seed,
+          split_ratio=(0.9, 0.1)
+          )
+
+      self.test_loader = get_test_loader_from_dirs(
+          data_dirs=self.config.test_dirs,
+          eval_batch_size=self.config.test_batch_size
+          )
+    else:
+      print("未偵測到獨立測試集，將 train_dirs 切分 (80% Train / 10% Valid / 10% Test)")
+      self.train_loader, self.valid_loader, self.test_loader = get_train_vaild_test_loader_from_dirs(
+          data_dirs=self.config.train_dirs,
+          batch_size=self.config.batch_size,
+          eval_batch_size=self.config.test_batch_size,
+          seed=self.config.seed,
+          split_ratio=(0.8, 0.1, 0.1)
+          )
 
   def build_system(self):
     """建立神經網路、損失函數與優化器"""
@@ -72,7 +87,6 @@ class PlantTrainer:
   def train(self):
     """執行包含早停機制的訓練迴圈"""
     print("\n--- 開始訓練模型 ---")
-    # 注意：這裡將 self.valid_loader 傳入以啟動早停與驗證機制
     train_model_with_early_stopping(
         model=self.model,
         train_loader=self.train_loader,
@@ -86,33 +100,34 @@ class PlantTrainer:
 
   def evaluate_and_log(self):
     """使用外部測試集評估模型，並上傳報表至 W&B"""
+    # 確保 test_loader 存在，避免發生空指標錯誤
+    if not self.test_loader:
+      print("沒有可用的測試集，跳過最終評估。")
+      return
+
     print("\n--- 執行最終外部測試集評估 ---")
     accuracy, true_labels, pred_labels, misclassified_info = evaluate_model(
         self.model, self.test_loader, self.device, self.config.class_names
         )
 
-    # 在本地端印出詳細報表
     self._print_detailed_metrics(true_labels, pred_labels)
 
-    # 處理 W&B 錯誤圖片畫廊
     error_table = wandb.Table(columns=["預覽圖", "檔案路徑", "正確答案", "模型猜測"])
     print("\n=== 預測錯誤的圖片清單 ===")
     count = 0
     for item in misclassified_info:
       if count == 20:
         print(f"... (Total {len(misclassified_info)})")
-        break;
+        break
       filename = item['path'].split('/')[-1]
       print(f"檔案: {filename} | 正確: {item['true']:<4} -> 錯認為: {item['pred']}")
       count += 1
 
     for item in misclassified_info:
-      filename = item['path'].split('/')[-1]
       error_table.add_data(
           wandb.Image(item['path']), item['path'], item['true'], item['pred']
           )
 
-    # 上傳所有最終指標
     wandb.log({
       "Test Accuracy (Ext)": accuracy,
       "Misclassified Images": error_table,
@@ -129,11 +144,9 @@ class PlantTrainer:
     print("\n--- 儲存與匯出模型 ---")
     os.makedirs(os.path.dirname(self.config.model_weight_path), exist_ok=True)
 
-    # 儲存 .pth
     torch.save(self.model.state_dict(), self.config.model_weight_path)
     print(f"模型權重已儲存至: {self.config.model_weight_path}")
 
-    # 匯出 .onnx
     self.model.eval()
     dummy_input = torch.randn(
         1, self.config.img_channels, self.config.img_size, self.config.img_size
