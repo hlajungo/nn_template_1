@@ -19,5 +19,5 @@ class BaseConfig:
 
   # Base Outputs
   model_weight_path: str = 'checkpoint/mnist_latest.pth'
-  onnx_path: str = 'checkpoint/mnist_cnn.onnx'
+  onnx_path: str = '/media/hlajungo/D/linux/repo_my/1142_nn/1142_nn_mid/checkpoint/mnist_cnn.onnx'
   submission_path: str = 'submission.csv'

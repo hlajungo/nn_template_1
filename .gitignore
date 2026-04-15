@@ -5,8 +5,8 @@ venv/
 __pycache__/
 *.pyc
 os
+sys
 jre
-
 
 # 資料集 (絕對不進版控)
 data/

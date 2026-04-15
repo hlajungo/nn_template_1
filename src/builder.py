@@ -13,12 +13,26 @@ def build_model(config, device):
   完全從零開始訓練 (Training from scratch)。
   """
   # 關鍵：weights=None 代表隨機初始化權重
-  model = models.resnet18(weights=None)
+  # model = models.resnet50(weights=None)
+  # model = models.resnet18(weights=None)
 
   # 修改最後的全連接層以符合你的類別數
-  num_ftrs = model.fc.in_features
+  # num_ftrs = model.fc.in_features
+
 
   # 加入 Dropout 防過擬合，因為從零訓練特別容易死記硬背
+  # model.fc = nn.Sequential(
+    # nn.Dropout(p=0.6),
+    # nn.Linear(num_ftrs, config.num_classes)
+  # )
+
+  # ----
+
+  model = models.resnet18(weights=None)
+
+  # ResNet 的最後一層叫做 fc，不是 classifier
+  num_ftrs = model.fc.in_features
+
   model.fc = nn.Sequential(
     nn.Dropout(p=0.5),
     nn.Linear(num_ftrs, config.num_classes)

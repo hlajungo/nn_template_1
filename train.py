@@ -48,9 +48,9 @@ class PlantTrainer:
     print("\n--- 正在準備資料集 ---")
 
     if self.config.test_dirs:
-      print("偵測到獨立測試集，將 train_dirs 切分 (90% Train / 10% Valid)")
+      print("偵測到獨立測試集，將 train_data_dirs 切分 (90% Train / 10% Valid)")
       self.train_loader, self.valid_loader = get_train_valid_loader_from_dirs(
-          data_dirs=self.config.train_dirs,
+          data_dirs=self.config.train_data_dirs,
           batch_size=self.config.batch_size,
           eval_batch_size=self.config.test_batch_size,
           seed=self.config.seed,
@@ -62,9 +62,9 @@ class PlantTrainer:
           eval_batch_size=self.config.test_batch_size
           )
     else:
-      print("未偵測到獨立測試集，將 train_dirs 切分 (80% Train / 10% Valid / 10% Test)")
+      print("未偵測到獨立測試集，將 train_data_dirs 切分 (80% Train / 10% Valid / 10% Test)")
       self.train_loader, self.valid_loader, self.test_loader = get_train_vaild_test_loader_from_dirs(
-          data_dirs=self.config.train_dirs,
+          data_dirs=self.config.train_data_dirs,
           batch_size=self.config.batch_size,
           eval_batch_size=self.config.test_batch_size,
           seed=self.config.seed,
@@ -72,17 +72,18 @@ class PlantTrainer:
           )
 
   def build_system(self):
-    """建立神經網路、損失函數與優化器"""
-    self.model = build_model(self.config, self.device)
-    self.criterion = nn.CrossEntropyLoss()
-    self.optimizer = optim.Adam(
+      """建立神經網路、損失函數與優化器"""
+      self.model = build_model(self.config, self.device)
+      self.criterion = nn.CrossEntropyLoss()
+      # 修正為 AdamW
+      self.optimizer = optim.AdamW(
         self.model.parameters(),
         lr=self.config.learning_rate,
         weight_decay=1e-4
-        )
+      )
 
-    params = sum(p.numel() for p in self.model.parameters())
-    print(f"模型總參數數量: {params:,}")
+      params = sum(p.numel() for p in self.model.parameters())
+      print(f"模型總參數數量: {params:,}")
 
   def train(self):
     """執行包含早停機制的訓練迴圈"""

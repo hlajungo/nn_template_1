@@ -14,7 +14,7 @@ def main():
 
   print(f"讀取 Kaggle 測試集: {config.test_csv_path}")
   kaggle_test_loader = get_kaggle_test_loader(
-      csv_path=config.test_csv_path,
+      csv_path=predict_dirs[0],
       batch_size=config.test_batch_size
       )
 
